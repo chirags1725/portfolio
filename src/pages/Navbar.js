@@ -2,6 +2,8 @@ import { Link } from "react-router-dom";
 import logo from "../images/logo.png";
 
 function Navbar() {
+
+
 	var link = document.querySelectorAll(".links");
 	link.forEach((e) => {
 		e.addEventListener("click", () => {
