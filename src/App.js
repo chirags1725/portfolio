@@ -5,7 +5,7 @@ import Portfolio from "./pages/Portfolio";
 import Blog from "./pages/Blog";
 import Contact from "./pages/Contact";
 import Navbar from "./pages/Navbar";
-import { Route, Routes, Routes } from "react-router-dom";
+import { Route, Routes } from "react-router-dom";
 
 function App() {
 	const prefersColorQuery = window.matchMedia("(prefers-color-scheme: dark)"),
