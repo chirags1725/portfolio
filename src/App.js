@@ -1,25 +1,35 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
+import Home from "./pages/Home";
+import About from "./pages/About";
+import Portfolio from "./pages/Portfolio";
+import Blog from "./pages/Blog";
+import Contact from "./pages/Contact";
+import Navbar from "./pages/Navbar";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+	const prefersColorQuery = window.matchMedia("(prefers-color-scheme: dark)"),
+		changeTheme = (e) => {
+			document.body.classList[e.matches ? "add" : "remove"]("dark");
+		};
+
+	changeTheme(prefersColorQuery);
+	prefersColorQuery.addEventListener("change", changeTheme);
+
+	return (
+		<>
+			<BrowserRouter>
+				<Navbar></Navbar>
+				<Routes>
+					<Route path="/" element={<Home />} />
+					<Route path="/About" element={<About />} />
+					<Route path="/Portfolio" element={<Portfolio />} />
+					<Route path="/Blog" element={<Blog />} />
+					<Route path="/Contact" element={<Contact />} />
+				</Routes>
+			</BrowserRouter>
+		</>
+	);
 }
 
 export default App;
