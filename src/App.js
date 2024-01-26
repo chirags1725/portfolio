@@ -5,7 +5,7 @@ import Portfolio from "./pages/Portfolio";
 import Blog from "./pages/Blog";
 import Contact from "./pages/Contact";
 import Navbar from "./pages/Navbar";
-import { BrowserRouter, Route, Routes } from "react-router-dom";
+import { BrowserRouter, HashRouter, Route, Routes } from "react-router-dom";
 
 function App() {
 	const prefersColorQuery = window.matchMedia("(prefers-color-scheme: dark)"),
@@ -18,16 +18,17 @@ function App() {
 
 	return (
 		<>
-			<BrowserRouter>
+			<HashRouter>
 				<Navbar></Navbar>
 				<Routes>
+					
 					<Route path="/" element={<Home />} />
 					<Route path="/About" element={<About />} />
 					<Route path="/Portfolio" element={<Portfolio />} />
 					<Route path="/Blog" element={<Blog />} />
 					<Route path="/Contact" element={<Contact />} />
 				</Routes>
-			</BrowserRouter>
+			</HashRouter>
 		</>
 	);
 }
